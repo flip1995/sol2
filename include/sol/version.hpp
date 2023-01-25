@@ -103,7 +103,7 @@
 	#else
 		#define SOL_COMPILER_VCXX_I_ SOL_OFF
 	#endif
-#elif defined(_MSC_VER)
+#elif defined(_MSC_VER) && !defined(__clang__)
 	#define SOL_COMPILER_VCXX_I_ SOL_DEFAULT_ON
 #else
 	#define SOL_COMPILER_VCXX_I_ SOL_DEFAULT_OFF
@@ -115,7 +115,7 @@
 	#else
 		#define SOL_COMPILER_GCC_I_ SOL_OFF
 	#endif
-#elif defined(__GNUC__)
+#elif defined(__GNUC__) && !defined(__clang__)
 	#define SOL_COMPILER_GCC_I_ SOL_DEFAULT_ON
 #else
 	#define SOL_COMPILER_GCC_I_ SOL_DEFAULT_OFF
